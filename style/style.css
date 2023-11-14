@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+    /* main colors  */
+    --white-100: #ffffff;
+    --main-color: rgb(27, 124, 228);
+    --gray-100: #797979;
+
+    /* font family */
+    --font-family-poppins: "poppins", Arial, sans-serif;
+    --font-family-PTsans: "PT sans", "poppins", Arial, sans-serif;
+
+    /* backgrounds */
+    --bg-light: var(--white-100);
+    --bg-color: #0a0a0f;
+    --bg-dark: rgb(10, 10, 10);
+    --bg-dark-light: rgb(18, 18, 18);
+    --bg-dark-lighter: rgb(33, 33, 33);
+
+    /*  bpx shadows */
+    --box-shadow-light: 0 5px 20px rgba(27, 123, 226, 0.3);
+    --box-shadow-dirk: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    /* text color */
+    --text-light: var(--white-100);
+    --text-grey: #333;
+
+
+    --blue-75: #3482ff;
+    --blue-90-alpha-75: rgba(27, 123, 226, 0.75);
+    --blue-90-alpha-55: rgba(27, 123, 226, 0.55);
+    --blue-90-alpha-45: rgba(27, 123, 226, 0.45);
+    --blue-90-alpha-20: rgba(27, 123, 226, 0.2);
+
+    /* linear gradient */
+    --footer-linear: linear-gradient(135deg, var(--blue-90-alpha-55), var(--blue-90-alpha-75));
+
+
+    --hue-color: 224;
+    --first-color: hsl(var(--hue-color), 89%, 60%);
+    --second-color: hsl(var(--hue-color), 56%, 12%);
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-poppins);
+    scroll-behavior: smooth;
+    border: none;
+    outline: none;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+/* ========= Global setups ================================================== */
+.container {
+    display: flex;
+}
+
+section {
+    height: 100vh;
+    padding: 5rem 5% 2rem;
+}
+
+
+/*============================== main titles ===============================77 */
+.main__heading {
+    position: relative;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.main__heading h2 {
+    font-family: var(--font-family-PTsans);
+    font-size: 6rem;
+    color: var(--text-grey);
+    font-weight: 700;
+    line-height: 7rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    transition: .7s ease;
+}
+
+.main__heading span {
+    font-family: var(--font-family-PTsans);
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px var(--gray-100);
+    color: var(--main-color);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+/* ============ HEADER ============================== */
+.header {
+
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    align-items: center;
+}
+
+.header__logo {
+    padding-left: 4rem;
+}
+
+.header__logo img {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.header__logo img:hover {
+    transform: rotate(-360deg) scale(1.1);
+}
+
+.logo-in img {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.header .menu .head {
+    display: none;
+}
+
+.header .menu ul {
+    list-style: none;
+}
+
+.header .menu>ul>li {
+    display: inline-block;
+}
+
+.header .menu>ul>li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.header .menu a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--font-family-PTsans);
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    display: block;
+}
+
+.header .menu a.active {
+    color: var(--main-color);
+    background-size: 100% 1px;
+}
+
+/* az aláhúzó animácció ------------------------------------------------------------------------------------ */
+.header .menu li a {
+    padding-bottom: 0;
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.5s ease;
+}
+
+.header .menu li a:hover {
+    color: var(--main-color);
+    background-size: 100% 1px;
+}
+
+.header-right {
+    display: flex;
+    padding-right: 30px;
+}
+
+.header-right>* {
+    margin-left: 25px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left .icon-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--white-100);
+    font-size: 1.5rem;
+    transition: .5s ease;
+}
+
+.header-left .icon-btn:hover {
+    transform: scale(1.2);
+    color: var(--main-color);
+}
+
+.header-right .open-menu-btn {
+    display: none;
+}
+
+
+
+
+
+/* ===================== HOME section ==================================== */
+.home {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(10, 10, 10, 0.8), rgb(10, 10, 10)), url(../img/BG-gray.jpg) center/cover;
+    /* background: linear-gradient(rgba(255, 255, 255, .8), rgb(255, 255, 255)), url(./img/BG-gray.jpg) center/cover; */
+
+}
+
+
+
+
+
+
+
+
+
+
+.footer {
+    height: 300px;
+    background: var(--footer-linear);
+    position: relative;
+}
+
+.footer>.text {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+
+/* ============== ABOUT section */
+.about {
+
+    color: var(--text-light);
+
+
+}
+
+
+
+/* -----------------  MEDIA SCREEN ---------------------------------------------------------------- */
+@media (max-width:991px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    .main__heading h2 {
+        font-size: 5rem;
+    }
+
+    .main__heading span {
+        font-size: 2rem;
+    }
+
+    .header .menu {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 400px;
+        background-color: var(--bg-dark);
+        padding: 15px 30px 30px;
+        overflow-y: auto;
+        z-index: 1;
+        box-shadow: var(--box-shadow-light);
+        transform: translateY(-110%);
+    }
+
+    .header .menu.open {
+        transform: none;
+    }
+
+    .logo {
+        padding-left: 2rem;
+    }
+
+    .logo-in {
+        padding-left: 0;
+    }
+
+
+    .wrapper {
+        gap: 0rem;
+    }
+
+    .header .menu .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+    /* az menüt záró X létrehozása ---------------------------------------------------------------- */
+    .header .menu .close-menu-btn {
+        height: 35px;
+        width: 35px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        transition: 0.5s ease;
+    }
+
+    .header .menu .close-menu-btn:hover {
+        transform: scale(1.4);
+    }
+
+    .header .menu .close-menu-btn::before,
+    .header .menu .close-menu-btn::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background-color: var(--white-100);
+    }
+
+    .header .menu .close-menu-btn:hover::before,
+    .header .menu .close-menu-btn:hover::after {
+        background-color: var(--main-color);
+    }
+
+    .header .menu .close-menu-btn::before {
+        transform: rotate(45deg);
+    }
+
+    .header .menu .close-menu-btn::after {
+        transform: rotate(-45deg);
+    }
+
+    /* ------------------------------------------------------------------------------------------- */
+    .header .menu>ul>li {
+        display: block;
+        text-align: center;
+    }
+
+    .header .menu>ul>li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    /* hamburger menüben a linkek aláhúzása */
+    .header .menu li {
+        border-bottom: 1px solid #ffffff25;
+    }
+
+    .header .menu li:first-child {
+        border-top: 1px solid #ffffff25;
+    }
+
+    .header .menu>ul>li>a {
+        padding: 12px 0;
+    }
+
+    .header .menu li a:hover {
+        background-size: 0 0px;
+    }
+
+    .header .menu li a.active {
+        background-size: 0 0px;
+    }
+
+
+
+
+
+    /* a hamburger menü ikon létrehozása--------------------------------- */
+    .header-right .open-menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 44px;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+        border: none;
+        transition: .5s ease;
+
+    }
+
+    .header-right .open-menu-btn:hover {
+        transform: scale(1.2);
+    }
+
+    .header-right .open-menu-btn:hover .line {
+        background-color: var(--main-color);
+    }
+
+    .header-right .open-menu-btn .line {
+        height: 2px;
+        width: 30px;
+        background-color: var(--white-100);
+        position: absolute;
+    }
+
+
+    .header-right .open-menu-btn .line-1 {
+        transform: translateY(-8px);
+    }
+
+    .header-right .open-menu-btn .line-3 {
+        transform: translateY(8px);
+    }
+
+    /* ---------------------------------------------------------------------------------------- */
+}
