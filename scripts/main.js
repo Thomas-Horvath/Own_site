@@ -83,3 +83,60 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+
+
+
+
+/*   Email send  */
+contactForm = document.getElementById("contact-form");
+statusBox = document.querySelector(".form__status-box p");  
+formInputs = document.querySelectorAll(".form__input");
+
+
+
+/* ============== Contact Section ============== */
+formInputs.forEach(input => {
+    input.addEventListener("focus", () => {
+        let targetLabel = document.querySelector(`.form__label[for=${input.id}]`);
+        targetLabel.classList.add("focus");
+    });
+    input.addEventListener("blur", () => {
+        let targetLabel = document.querySelector(`.form__label[for=${input.id}]`);
+        if (input.value.length === 0)
+            targetLabel.classList.remove("focus");
+    });
+});
+
+
+
+/* ============== Send Email By EmailJS ============== */
+const serviceID = "service_t8b2h45";
+const templateID = "template_aa4hy22";
+const templateParams = contactForm;
+const publicKey = "83VPhLv_IQqpQzH-0";
+
+function sendEmail(e) {
+    e.preventDefault();
+    emailjs.sendForm(serviceID, templateID, templateParams, publicKey).then(response => {
+        console.log(response.status, response.text);
+        statusBox.textContent = "Az üzenetet sikeresen elküldtük! ✅"
+        setTimeout(() => {
+            statusBox.textContent = ""
+        }, 5000);
+        contactForm.reset();
+        const labels = contactForm.querySelectorAll('.form__label');
+        labels.forEach(label => {
+            label.classList.remove('focus');
+        });
+    },
+        (error) => {
+            console.log(error);
+            statusBox.textContent = "Az üzenetet nem sikerült elküldeni! ❌"
+        }
+    );
+}
+
+contactForm.addEventListener("submit", sendEmail)
+
