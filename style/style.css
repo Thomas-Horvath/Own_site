@@ -69,6 +69,10 @@ section {
     padding: 5rem 5% 2rem;
 }
 
+img {
+    width: 100px;
+
+}
 
 /*============================== main titles ===============================77 */
 .main__heading {
@@ -240,7 +244,7 @@ section {
     height: 100vh;
     background: linear-gradient(rgba(10, 10, 10, 0.8), rgb(10, 10, 10)), url(../img/BG-gray.jpg) center/cover;
     /* background: linear-gradient(rgba(255, 255, 255, .8), rgb(255, 255, 255)), url(./img/BG-gray.jpg) center/cover; */
-
+    color: var(--text-light);
 }
 
 
@@ -259,11 +263,11 @@ section {
 }
 
 .footer>.text {
-    display: inline-block;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    color: var(--text-light);
 }
 
 
@@ -278,12 +282,15 @@ section {
 
 
 }
+
 .skills {
     background-color: var(--bg-dark-light);
 }
+
 .skills .main__heading h2 {
     color: var(--text-grey-light);
 }
+
 /* ============ CONTACT section */
 .contact {
     width: 100%;
@@ -486,7 +493,7 @@ textarea.form__input {
         right: 0;
         top: 0;
         width: 100%;
-        height: 400px;
+        height: auto;
         background-color: var(--bg-dark);
         padding: 15px 30px 30px;
         overflow-y: auto;
@@ -655,4 +662,45 @@ textarea.form__input {
     .form__content {
         width: 100%;
     }
+}
+
+@media screen and (max-width: 668px) {
+    .main__heading h2 {
+        font-size: 3.42rem;
+    }
+
+    .contact__info-item {
+        width: 100%;
+
+
+    }
+
+    .contact__info-item a {
+        flex-direction: column;
+    }
+
+    .contact__info-item .group {
+        text-align: center;
+    }
+
+    .contact__container {
+        padding-top: 3rem;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .main__heading h2 {
+        font-size: 2.5rem;
+    }
+
+    .main__heading span {
+        font-size: 1.8rem;
+        top: 70%;
+    }
+
+    .contact__info-item {
+        width: 100%;
+    }
+
 }
