@@ -35,28 +35,32 @@ const img = document.querySelector(".header__logo-img");
 
 function changeHeaderBg() {
     const scrollY = window.scrollY;
+    const windowWidth = window.innerWidth;
+
+/*     console.log("scrollY:", scrollY, "windowWidth:", windowWidth); */
     header.style.transition = "all 0.2s ease";
 
     /* ha scroll történik akkor ez történik */
-    if (scrollY > 0) {
+    if (scrollY > 0 || windowWidth <= 668) {
         header.style.background = "var(--bg-dark)";
-        header.style.height = "55px";
+        header.style.height = "60px";
         header.style.boxShadow = "var(--box-shadow-light)";
-       /*  img.src = "./img/Logo Thomas_dark.png"; */
+
     }
     /* ha nem akkor pedig marad ez ami elvileg az eredeti beállítés */
     else {
         header.style.height = "70px";
         header.style.background = "transparent";
         header.style.boxShadow = "";
-       /*  img.src = "./img/Logo Thomas_light.png"; */
+        /*  img.src = "./img/Logo Thomas_light.png"; */
 
     }
 }
 
 /* ezzel hívom meg a a renderelő függvényt mikor az oldalon scroll esemény történik */
 window.addEventListener("scroll", changeHeaderBg);
-window.addEventListener("load",changeHeaderBg );
+window.addEventListener("load", changeHeaderBg);
+window.addEventListener("resize", changeHeaderBg);
 
 
 
@@ -91,7 +95,7 @@ window.addEventListener('scroll', () => {
 
 /*   Email send  */
 contactForm = document.getElementById("contact-form");
-statusBox = document.querySelector(".form__status-box p");  
+statusBox = document.querySelector(".form__status-box p");
 formInputs = document.querySelectorAll(".form__input");
 
 
