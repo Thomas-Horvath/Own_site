@@ -37,7 +37,7 @@ function changeHeaderBg() {
     const scrollY = window.scrollY;
     const windowWidth = window.innerWidth;
 
-/*     console.log("scrollY:", scrollY, "windowWidth:", windowWidth); */
+    /*     console.log("scrollY:", scrollY, "windowWidth:", windowWidth); */
     header.style.transition = "all 0.2s ease";
 
     /* ha scroll történik akkor ez történik */
@@ -148,8 +148,9 @@ contactForm.addEventListener("submit", sendEmail)
 
 /* dark light mode */
 /* ============== Dark / Light Theme ============== */
-colorThemeBtn = document.querySelector(".color-theme");
+const colorThemeBtn = document.querySelector(".color-theme");
 const imgLogo = document.querySelector(".header__logo-img");
+const imgLogoEn = document.querySelector(".header__logo-img-en");
 
 colorThemeBtn.addEventListener("click", () => {
     theme.toggleTheme();
@@ -157,12 +158,24 @@ colorThemeBtn.addEventListener("click", () => {
 
 
 function changeTheme() {
+    const langAttribute = document.documentElement.lang;
+
     if (theme.currentTheme === "dark") {
         colorThemeBtn.querySelector("i").classList.replace("ri-moon-fill", "ri-sun-fill");
-        imgLogo.src = "./img/Logo Thomas_light.png";
+        if (langAttribute === "hu") {
+            imgLogo.src = "./img/Logo Thomas_light.png";
+        }
+        else if (langAttribute === "en"){
+            imgLogoEn.src = "../img/Logo Thomas_light.png";
+        }
     } else if (theme.currentTheme === "light") {
         colorThemeBtn.querySelector("i").classList.replace("ri-sun-fill", "ri-moon-fill");
-        imgLogo.src = "./img/Logo Thomas_blue.png";
+        if (langAttribute === "hu") {
+            imgLogo.src = "./img/Logo Thomas_blue.png";
+        }
+        else {
+            imgLogoEn.src = "../img/Logo Thomas_blue.png";
+        }
     }
 
 };
