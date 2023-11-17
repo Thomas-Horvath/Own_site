@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Horváth Tamás vagyok, junior frontend fejlesztő és Adatbázis
         Specialista.">
+        <!-- Dark Light MODE -->
+    <script src="./scripts/theme.js"></script>
+    <script>
+        const theme = new Theme("dark");
+        theme.init();
+    </script>
     <!-- FAVICON -->
     <link rel="shortcut icon" href="./img/logo_favicon.svg" type="image/x-icon">
     <!-- REMIXICONS -->
@@ -44,7 +50,7 @@
                     </ul>
                 </nav>
                 <div class="header-left">
-                    <button type="button" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
+                    <div class="icon-btn color-theme"><i class="ri-moon-fill"></i></div>
                     <div class="language"><a href="./en/index.html"><img src="./img/icons8-great-britain-48.png"
                                 alt=""></a></div>
                 </div>

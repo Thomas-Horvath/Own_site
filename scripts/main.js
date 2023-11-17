@@ -144,3 +144,30 @@ function sendEmail(e) {
 
 contactForm.addEventListener("submit", sendEmail)
 
+
+
+/* dark light mode */
+/* ============== Dark / Light Theme ============== */
+colorThemeBtn = document.querySelector(".color-theme");
+const imgLogo = document.querySelector(".header__logo-img");
+
+colorThemeBtn.addEventListener("click", () => {
+    theme.toggleTheme();
+});
+
+
+function changeTheme() {
+    if (theme.currentTheme === "dark") {
+        colorThemeBtn.querySelector("i").classList.replace("ri-moon-fill", "ri-sun-fill");
+        imgLogo.src = "../img/Logo Thomas_light.png";
+    } else if (theme.currentTheme === "light") {
+        colorThemeBtn.querySelector("i").classList.replace("ri-sun-fill", "ri-moon-fill");
+        imgLogo.src = "../img/Logo Thomas_blue.png";
+    }
+
+};
+
+
+theme.onLoad(changeTheme);
+theme.onToggle(changeTheme);
+

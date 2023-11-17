@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="content=" Horváth Tamás vagyok, junior frontend fejlesztő és Adatbázis
+    <meta name="description" content="Horváth Tamás vagyok, junior frontend fejlesztő és Adatbázis
         Specialista.">
+    <!-- Dark Light MODE -->
+    <script src="../scripts/theme.js"></script>
+    <script>
+        const theme = new Theme("dark");
+        theme.init();
+    </script>
     <!-- FAVICON -->
     <link rel="shortcut icon" href="../img/logo_favicon.svg" type="image/x-icon">
     <!-- REMIXICONS -->
@@ -44,7 +50,7 @@
                     </ul>
                 </nav>
                 <div class="header-left">
-                    <button type="button" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
+                    <button type="button" class="icon-btn color-theme"><i class="ri-moon-fill"></i></button>
                     <div class="language"><a href="../index.html"><img src="../img/icons8-hungarian-flag-48.png"
                                 alt=""></a></div>
                 </div>
@@ -62,7 +68,7 @@
     <!--  home section -->
     <section class="home" id="home">
         <div class="home-detail">
-            <h3 class="title">Üdvözöllek oldalamon!</h3>
+            <h3 class="title">Welcome!</h3>
             <h1>Horváth Tamás vagyok</h1>
             <h3 class="text"><span class="textline"> </span></h3>
             <p>Engedd meg, hogy megosszam veled, milyen készségekkel rendelkezem a webfejlesztés területén. Az oldalamon
@@ -73,7 +79,7 @@
                 <a href="#"><i class="bx bxl-linkedin"></i></a>
                 <a href="#"><i class="bx bxl-github"></i></a>
             </div>
-            <button class="btn">Tölsd le az önéletrajzom</button>
+            <button class="btn">Download my CV</button>
         </div>
         <div class="home-img">
             <img src="../img/Profil_pic_SM.png" alt="">
@@ -87,8 +93,8 @@
     <!-- about section -->
     <section class="about" id="about">
         <div class="main__heading">
-            <h2>Néhány szóban</h2>
-            <span>Magamról</span>
+            <h2>Some words</h2>
+            <span>About me</span>
         </div>
         <div class="container">
             <div class="about__left">
@@ -98,11 +104,11 @@
             </div>
             <div class="about__right">
                 <div class="about-section">
-                    <h3>Webfejlesztő</h3>
+                    <h3>Web developer</h3>
                     <p>Gyermekkorom óta foglalkoztat az IT világa, az összetett rendszerek működése és azok
                         üzemeltetése.
                     </p>
-                    <a href="./about.html" class="btn">Tovább</a>
+                    <a href="./about.html" class="btn">More</a>
                 </div>
             </div>
         </div>
@@ -114,8 +120,8 @@
     <!-- skills section -->
     <section class="skills" id="skills">
         <div class="main__heading">
-            <h2>Készségek</h2>
-            <span>Amikkel rendelkezem</span>
+            <h2>Skills</h2>
+            <span>That I have</span>
         </div>
     </section>
 
@@ -124,8 +130,8 @@
 
     <section class="portfolio" id="portfolio">
         <div class="main__heading">
-            <h2>portfólió</h2>
-            <span>Néhány projektem</span>
+            <h2>Portfolio</h2>
+            <span>My projectes</span>
         </div>
     </section>
 
@@ -136,8 +142,8 @@
     <!-- contact section -->
     <section class="contact" id="contact">
         <div class="main__heading">
-            <h2>Kapcsolat</h2>
-            <span>Tegye fel kérdését</span>
+            <h2>Contact</h2>
+            <span>Ask your question</span>
         </div>
         <div class="contact__container container">
             <div class="contact__content">
@@ -146,7 +152,7 @@
                         <a href="tel:+3630 123 4567">
                             <i class="ri-phone-fill contact__icon"></i>
                             <div class="group">
-                                <p class="contact__title">Telefon</p>
+                                <p class="contact__title">Telephone</p>
                                 <p class="contact__subtitle">+3630 854 4452</p>
                             </div>
                         </a>
@@ -155,7 +161,7 @@
                         <a href="mailto:thomashorvathweb@gmail.com">
                             <i class="ri-mail-fill contact__icon"></i>
                             <div class="group">
-                                <p class="contact__title">Email cím</p>
+                                <p class="contact__title">Email address</p>
                                 <p class="contact__subtitle">thomashorvathweb@gmail.hu</p>
                             </div>
                         </a>
@@ -164,7 +170,7 @@
                         <a href="">
                             <i class="ri-map-pin-fill contact__icon"></i>
                             <div class="group">
-                                <p class="contact__title">Cím</p>
+                                <p class="contact__title">Address</p>
                                 <p class="contact__subtitle">Pomáz - HU</p>
                             </div>
                         </a>
@@ -174,30 +180,30 @@
                     <div class="form__container">
                         <div class="form__content">
                             <div class="form__group">
-                                <label for="name" class="form__label">név</label>
+                                <label for="name" class="form__label">Name</label>
                                 <input type="text" name="user-name" id="name" class="input-primary form__input"
                                     autocomplete="off" required>
                             </div>
                             <div class="form__group">
-                                <label for="email" class="form__label ">email</label>
+                                <label for="email" class="form__label ">Email</label>
                                 <input type="email" name="user-email" id="email" class="input-primary form__input"
                                     autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form__group">
-                            <label for="subject" class="form__label ">tárgy</label>
+                            <label for="subject" class="form__label ">Subject</label>
                             <input type="text" name="subject" id="subject" class="input-primary form__input"
                                 autocomplete="off">
                         </div>
                         <div class="form__group">
-                            <label for="message" class="form__label ">üzenet</label>
+                            <label for="message" class="form__label ">Message</label>
                             <textarea type="text" name="message" id="message" class="input-primary form__input"
                                 autocomplete="off" required></textarea>
                         </div>
                         <div class="form__status-box">
                             <p></p>
                         </div>
-                        <button type="submit" name="submit" class="btn">Küldés
+                        <button type="submit" name="submit" class="btn">Send
                             <i class="ri-send-plane-fill"></i></button>
                     </div>
                 </form>
