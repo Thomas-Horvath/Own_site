@@ -159,10 +159,10 @@ colorThemeBtn.addEventListener("click", () => {
 function changeTheme() {
     if (theme.currentTheme === "dark") {
         colorThemeBtn.querySelector("i").classList.replace("ri-moon-fill", "ri-sun-fill");
-        imgLogo.src = "../img/Logo Thomas_light.png";
+        imgLogo.src = "./img/Logo Thomas_light.png";
     } else if (theme.currentTheme === "light") {
         colorThemeBtn.querySelector("i").classList.replace("ri-sun-fill", "ri-moon-fill");
-        imgLogo.src = "../img/Logo Thomas_blue.png";
+        imgLogo.src = "./img/Logo Thomas_blue.png";
     }
 
 };
