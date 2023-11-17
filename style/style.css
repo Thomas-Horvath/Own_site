@@ -125,7 +125,7 @@ img {
     height: 70px;
 
 }
-.group {
+.header__group {
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
