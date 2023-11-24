@@ -26,7 +26,7 @@
     --text-grey: #333;
     --text-grey-light: #666;
 
-    --small-menu-border:#ffffff25;
+    --small-menu-border: #ffffff25;
     --blue-75: #3482ff;
     --blue-90-alpha-75: rgba(27, 123, 226, 0.75);
     --blue-90-alpha-55: rgba(27, 123, 226, 0.55);
@@ -315,6 +315,38 @@ img {
 .skills .main__heading h2 {
     color: var(--text-grey-light);
 }
+
+/*  placeholder section */
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 3rem 10rem 3rem ;
+    min-height: 400px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('../img/code-5113374burned_1920.jpg');
+    background-size: contain cover;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+
+}
+
+.placeholder-content {
+    max-width: 800px;
+    line-height: 60px;
+    font-family: "pt-sans";
+    color: #ffffff;
+    font-size: 2.5rem;  
+    
+}
+
+
+
+
 
 /* ============ CONTACT section */
 .contact {
