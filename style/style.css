@@ -4,7 +4,7 @@
     /* main colors  */
 
     --white-100: #ffffff;
-    --main-color: rgb(27, 124, 228);
+    --main-color: #1b7ce4;
     --gray-100: #797979;
     --black: #000;
     /* font family */
@@ -130,28 +130,48 @@ a {
 .btn {
     display: flex;
     align-items: center;
-    column-gap: 0.7rem;
+    /* column-gap: 0.7rem; */
     outline: none;
     border: none;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: .25rem;
     font-size: calc(1rem * 1.1);
     cursor: pointer;
     background-color: var(--main-color);
     height: 50px;
     width: fit-content;
+    position: relative;
     color: var(--btn-color-light);
     padding-inline: 1rem;
-    transition: background .3s;
+    z-index: 1;
+    transition: .4s;
+}
+.btn::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #242424 ;
+    z-index: -1;
+    transform-origin: center;
+    transform: scale(0);
+    border-radius: .25rem;
+    transition: .3s;
+}
+
+
+.btn:hover::after {
+    transform: scale(1);
+    border: 1px solid #aaa;
+    box-shadow:0 0 18px 4px #1b7ce4aa;
 }
 
 .btn>i {
     font-weight: 600;
 }
 
-.btn:hover {
-    background-color: var(--blue-75);
-}
 
 
 
@@ -438,6 +458,7 @@ a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin: 10px;
 }
+
 
 .skill-title {
     font-family: var(--font-family-poppins);
