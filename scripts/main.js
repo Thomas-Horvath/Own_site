@@ -42,7 +42,7 @@ function changeHeaderBg() {
 
     /* ha scroll történik akkor ez történik */
     if (scrollY > 0 || windowWidth <= 668) {
-        header.style.background = "var(--bg-dark)";
+        header.style.background = "var(--bg-header-dark)";
         header.style.height = "60px";
         header.style.boxShadow = "var(--box-shadow-light)";
 
