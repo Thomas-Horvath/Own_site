@@ -17,6 +17,7 @@
     --bg-color: #0a0a0f;
     --bg-dark: #11111b;
     --bg-dark-light: #121212;
+    --bg-dark-light-75: #12121275;
     --bg-dark-lighter: rgb(33, 33, 33);
     --bg-light-dark: #cccccc;
     --bg-light-darker: #2A2A30;
@@ -130,6 +131,7 @@ a {
 .btn {
     display: flex;
     align-items: center;
+    text-align: center;
     /* column-gap: 0.7rem; */
     outline: none;
     border: none;
@@ -146,6 +148,7 @@ a {
     z-index: 1;
     transition: .4s;
 }
+
 .btn::after {
     position: absolute;
     content: "";
@@ -153,7 +156,7 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #242424 ;
+    background: #242424;
     z-index: -1;
     transform-origin: center;
     transform: scale(0);
@@ -165,11 +168,15 @@ a {
 .btn:hover::after {
     transform: scale(1);
     border: 1px solid #aaa;
-    box-shadow:0 0 18px 4px #1b7ce4aa;
+    box-shadow: 0 0 18px 4px #1b7ce4aa;
 }
 
 .btn>i {
     font-weight: 600;
+}
+
+.btn>a {
+    color: inherit;
 }
 
 
@@ -190,7 +197,7 @@ a {
 }
 
 .header__group {
-    max-width: 1200px;
+    max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -328,22 +335,104 @@ a {
 /* ===================== HOME section ==================================== */
 .home {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     background: var(--bg-linear-gradient);
     color: var(--text-light);
     background-attachment: fixed;
+
+
+}
+
+.home-content {
+    margin: 0 auto;
+    display: flex;
+padding-bottom: 5rem;
+    gap: 2rem;
+    max-width: 1600px;
+    height: 100vh;
+}
+
+
+
+.home-detail {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-text,
+.home-detail h1,
+.home-detail p,
+.home-title {
+    font-family: var(--font-family-PTsans);
+}
+
+.home-title {
+
+    font-size: 4.2rem;
+    margin-bottom: 2rem;
+}
+
+.home-detail h1 {
+    font-size: 3.2rem;
+
+}
+
+.home-text {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.home-detail p {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 2rem;
+}
+
+.home-social-media {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.soc-icon {
+    font-size: 2.8rem;
+    color: var(--main-color);
+    transition: .3s ease;
+}
+
+.soc-icon:hover {
+    transform: scale(1.2);
+
+}
+
+.soc-icon i:hover {
+    color: var(--text-light);
 }
 
 
 
 
 
+.home-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
 
-
-
-
-
-
+.home-img img {
+    border-radius: 6px;
+    width: 100%;
+    background-color: var(--bg-dark-light-75);
+    box-shadow: 0 0 20px var(--main-color);
+}
 
 
 
@@ -391,7 +480,7 @@ a {
     top: 0;
     left: 0;
     z-index: 100;
-   
+
 }
 
 .placeholder::after {
@@ -448,10 +537,11 @@ a {
 }
 
 .skill-box {
+    flex-grow: 2;
     position: relative;
-    min-width: 230px;
-    max-width: 350px;
-    width: 35%;
+    /*  min-width: 230px;
+    max-width: 350px; */
+    width: 30%;
     background-color: var(--bg-light-darker);
     padding: 40px;
     border-radius: 10px;
@@ -476,6 +566,7 @@ a {
     margin-bottom: 20px;
     border-bottom: 1px solid var(--small-menu-border);
     padding-bottom: 30px;
+
 }
 
 .skill:nth-child(2) {
@@ -730,6 +821,24 @@ textarea.form__input {
 
 
 /* -----------------  MEDIA SCREEN ---------------------------------------------------------------- */
+@media screen and (max-width: 1400px) {
+    .home-img {
+        padding: 0;
+    }
+
+    .home-detail h1 {
+        font-size: 3rem;
+    }
+
+    .home-detail p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width:1270px) {
     .skill-box {
         position: relative;
@@ -741,6 +850,9 @@ textarea.form__input {
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         margin: 10px;
+    }
+    .home-content {
+        gap: 1rem;
     }
 }
 
@@ -802,6 +914,16 @@ textarea.form__input {
         justify-content: space-between;
         margin-bottom: 25px;
     }
+
+    .home-content {
+   flex-direction: column-reverse;
+   align-items: center;
+    }
+    .home-img {
+        width: 50%;
+    }
+
+
 
     /* az menüt záró X létrehozása ---------------------------------------------------------------- */
     .header .menu .close-menu-btn {
