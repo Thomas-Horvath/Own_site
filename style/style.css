@@ -297,7 +297,8 @@ a {
 
 .header-right {
     display: flex;
-    padding-right: 30px;
+    margin-right: 2rem;
+    padding-right: 2rem;
 }
 
 .header-right>* {
@@ -370,9 +371,9 @@ a {
     min-width: 250px;
     gap: 2rem;
     max-width: 1600px;
-
+/* min-height: 100vh; */
     display: grid;
-    grid-template-rows: 100%;
+   /*  grid-template-rows: 100%; */
     grid-template-columns: 1fr 1fr;
 
 }
@@ -1071,9 +1072,9 @@ textarea.form__input {
 
 
 
-    .home {
+    /* .home {
         display: block;
-    }
+    } */
 
     .home-content {
         grid-template-columns: 1fr;
@@ -1295,7 +1296,9 @@ textarea.form__input {
 
 
     }
-
+.header-right {
+    margin-right: 0;
+}
     .header__logo {
         padding-left: 2rem;
     }
@@ -1398,7 +1401,7 @@ textarea.form__input {
 
     .home-content {
         width: 100%;
-        grid-template-columns: auto;
+ 
     }
 
     .home-img {
