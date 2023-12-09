@@ -355,7 +355,9 @@ a {
     background: var(--bg-linear-gradient);
     color: var(--text-light);
     background-attachment: fixed;
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 
 
