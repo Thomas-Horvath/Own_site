@@ -2,6 +2,11 @@ const menu = document.querySelector(".menu");
 const openMenuBtn = document.querySelector(".open-menu-btn");
 const closeMenuBtn = document.querySelector(".close-menu-btn");
 const menuLinks = document.querySelectorAll(".menu-link"); /*minden linknek van egy ilyen osztélya */
+var pathName = window.location.pathname;
+var fileName = pathName.substring(pathName.lastIndexOf("/") + 1);
+console.log(fileName,pathName);
+
+
 
 [openMenuBtn, closeMenuBtn].forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -71,22 +76,31 @@ window.addEventListener("resize", changeHeaderBg);
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelector('header nav a');
 
-window.addEventListener('scroll', () => {
-    const top = window.scrollY + 150; // Az eltérés miatt hozzáadunk 150 pixelt
 
-    sections.forEach(section => {
-        const id = section.getAttribute("id");
-        const link = document.querySelector(`header nav a[href="#${id}"]`);
 
-        if (section.offsetTop <= top && section.offsetTop + section.offsetHeight > top) {
-            // Ha a szakasz fent látható, hozzáadjuk az "active" osztályt a hozzátartozó linkhez
-            link.classList.add('active');
-        } else {
-            // Ellenkező esetben eltávolítjuk az "active" osztályt a linkről
-            link.classList.remove('active');
-        }
+if (fileName !== "about.html") {
+    window.addEventListener('scroll', () => {
+        const top = window.scrollY + 150; // Az eltérés miatt hozzáadunk 150 pixelt
+
+        sections.forEach(section => {
+            const id = section.getAttribute("id");
+
+            const link = document.querySelector(`header nav a[href="#${id}"]`);
+
+
+
+            if (section.offsetTop <= top && section.offsetTop + section.offsetHeight > top) {
+                // Ha a szakasz fent látható, hozzáadjuk az "active" osztályt a hozzátartozó linkhez
+                link.classList.add('active');
+            } else {
+                // Ellenkező esetben eltávolítjuk az "active" osztályt a linkről
+                link.classList.remove('active');
+            }
+        });
     });
-});
+
+};
+
 
 
 
@@ -141,9 +155,9 @@ function sendEmail(e) {
         }
     );
 }
-
-contactForm.addEventListener("submit", sendEmail)
-
+if (fileName !== "about.html") {
+    contactForm.addEventListener("submit", sendEmail)
+};
 
 
 /* dark light mode */
@@ -165,7 +179,7 @@ function changeTheme() {
         if (langAttribute === "hu") {
             imgLogo.src = "./img/Logo Thomas_light.png";
         }
-        else if (langAttribute === "en"){
+        else if (langAttribute === "en") {
             imgLogoEn.src = "../img/Logo Thomas_light.png";
         }
     } else if (theme.currentTheme === "light") {
@@ -184,3 +198,23 @@ function changeTheme() {
 theme.onLoad(changeTheme);
 theme.onToggle(changeTheme);
 
+
+
+
+/* ============== ScrollUp Button ============== */
+const scrollUpBtn = document.querySelector(".scrollUp");
+function showScrollUpBtn() {
+    if (window.scrollY > 100) {
+        scrollUpBtn.classList.add("show");
+    } else {
+        scrollUpBtn.classList.remove("show");
+    }
+}
+
+scrollUpBtn.addEventListener("click", () => window.scrollTo({ behavior: "smooth", top: 0, left: 0 }))
+
+window.addEventListener("scroll", () => {
+
+    showScrollUpBtn();
+
+});
