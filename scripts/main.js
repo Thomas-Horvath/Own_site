@@ -218,3 +218,53 @@ window.addEventListener("scroll", () => {
     showScrollUpBtn();
 
 });
+
+
+/* ===================== porfolio popup =================== */
+
+const modalViews = document.querySelectorAll(".portfolio-popup-wrapper"),
+    modalBtns = document.querySelectorAll(".btn-portfolio"),
+    modalCloses = document.querySelectorAll(".close-btn");
+
+
+
+/*  modal függvény létrehozása */
+let modal = function (modalClick) {
+    // a mmodalClickben kapott  indexű elemhez jozzáadja az active-modal osztályt ami ccs-ben a megjelenésért felelős
+    modalViews[modalClick].classList.add("active"); 
+
+    modalViews[modalClick].addEventListener("click", function (e) {
+        // Ellenőrizzük, hogy a kattintás a modal tartalmán belül vagy kívül történt
+        if (e.target === this) {
+            closeModal(modalClick);
+        }
+    });
+};
+
+
+
+/* a closeModal függvény létrehozása */
+let closeModal = function (modalClick) {
+    modalViews[modalClick].classList.remove("active");
+}
+
+
+
+
+// végig megy a gombokon és futtat egy egy függvényt
+modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener('click', () => {
+        modal(i);
+    })
+})
+
+
+
+
+modalCloses.forEach((modalClose, i) => {
+    modalClose.addEventListener("click", () => {
+        closeModal(i);
+    });
+});
+
+
